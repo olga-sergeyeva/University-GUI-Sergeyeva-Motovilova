@@ -46,8 +46,8 @@ namespace University
 
             Controls.Add(table);
 
-            buttonAccountant.Click += (sender, args) => button_AAForm();
-            buttonTechnicalSpecialist.Click += (sender, args) => button_TSForm();
+            buttonAccountant.Click += (sender, args) => button_AAForm(); //кнопка бухгалтер
+            buttonTechnicalSpecialist.Click += (sender, args) => button_TSForm(); //кнопка тех специалист
         }
 
         private void button_AAForm()

@@ -11,8 +11,9 @@ namespace University
     {
         public ActorChoiceForm()
         {
-            var singInLabel = new Label
+            var Label = new Label
             {
+                Text = "Войти в систему как",
                 Dock = DockStyle.Fill
             };
 
@@ -39,15 +40,15 @@ namespace University
             table.Dock = DockStyle.Fill;
 
             table.Controls.Add(new System.Windows.Forms.Panel(), 0, 0);
-            table.Controls.Add(singInLabel, 0, 1);
+            table.Controls.Add(Label, 0, 1);
             table.Controls.Add(buttonAccountant, 0, 2);
             table.Controls.Add(buttonTechnicalSpecialist, 0, 3);
             table.Controls.Add(new System.Windows.Forms.Panel(), 0, 4);
 
             Controls.Add(table);
 
-            buttonAccountant.Click += (sender, args) => button_AAForm(); //кнопка бухгалтер
-            buttonTechnicalSpecialist.Click += (sender, args) => button_TSForm(); //кнопка тех специалист
+            buttonAccountant.Click += (sender, args) => button_AAForm(); 
+            buttonTechnicalSpecialist.Click += (sender, args) => button_TSForm(); 
         }
 
         private void button_AAForm()

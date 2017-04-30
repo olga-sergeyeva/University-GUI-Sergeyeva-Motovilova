@@ -60,6 +60,15 @@ namespace University
 
             table.Dock = DockStyle.Fill;
             Controls.Add(table);
+
+            buttonAddStudent.Click += (sender, args) => AddStudent();
+        }
+
+        private void AddStudent()
+        {
+            AddStudentForm asform = new AddStudentForm();
+            asform.Show();
+            this.Hide();
         }
     }
 }

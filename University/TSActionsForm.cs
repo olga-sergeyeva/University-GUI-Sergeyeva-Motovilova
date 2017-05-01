@@ -46,7 +46,7 @@ namespace University
                 Dock = DockStyle.Fill
             };
 
-            var buttonChangeInfoEmployee = new Button
+            var buttonChangeEmployeeInfo = new Button
             {
                 Text = "Редактировать профиль сотрудника",
                 Dock = DockStyle.Fill
@@ -78,7 +78,7 @@ namespace University
             table.Controls.Add(buttonChangeStudentInfo, 0, 3);
             table.Controls.Add(buttonDeleteStudent, 0, 4);
             table.Controls.Add(buttonAddEmployee, 1, 2);
-            table.Controls.Add(buttonChangeInfoEmployee, 1, 3);
+            table.Controls.Add(buttonChangeEmployeeInfo, 1, 3);
             table.Controls.Add(buttonDeleteEmployee, 1, 4);
             table.Controls.Add(new Panel(), 0, 5);
 
@@ -87,12 +87,20 @@ namespace University
             Controls.Add(table);
 
             buttonAddStudent.Click += (sender, args) => AddStudent();
+            buttonChangeStudentInfo.Click += (sender, args) => ChangeStudentInfo();
         }
 
         private void AddStudent()
         {
             AddStudentForm asform = new AddStudentForm();
             asform.Show();
+            this.Hide();
+        }
+
+        private void ChangeStudentInfo()
+        {
+            ChangeStudentInfoForm csiform = new ChangeStudentInfoForm();
+            csiform.Show();
             this.Hide();
         }
     }

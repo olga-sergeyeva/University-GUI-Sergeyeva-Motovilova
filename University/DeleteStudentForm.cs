@@ -20,6 +20,7 @@ namespace University
 
             var combobox = new ComboBox
             {
+                DataSource = GetData().ToList(),
                 Dock = DockStyle.Fill
             };
 
@@ -49,18 +50,18 @@ namespace University
             table.Dock = DockStyle.Fill;
             Controls.Add(table);
 
-            combobox.Click += (sender, args) => ListStudent(combobox);
             buttonDelete.Click += (sender, args) => DeleteStudent(combobox.SelectedText);
         }
 
-        private void ListStudent(ComboBox combobox)
+        private List<string> GetData()
         {
             string path = "C:\\Users\\user\\Desktop\\ListOfStudents.txt";
             List<string> List = new List<string>();
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
                 List.Add(lines[i]);
-            combobox.DataSource = List.ToList();
+
+            return List;
         }
 
         private void DeleteStudent(string line)

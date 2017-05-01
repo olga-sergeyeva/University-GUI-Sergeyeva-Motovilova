@@ -8,13 +8,14 @@ namespace University
 {
     class Student
     {
-        public Student(int id_student, string fname, string lname, string faculty, string gpa)
+        public Student(int id_student, string fname, string lname, string faculty, string gpa, decimal ascholarship)
         {
             this.id_student = id_student;
             this.fname = fname;
             this.lname = lname;
             this.faculty = faculty;
             this.gpa = gpa;
+            this.ascholarship = ascholarship;
         }
 
         private int id_student;
@@ -31,6 +32,9 @@ namespace University
 
         private string gpa;
         public string GPA { get { return gpa; } set { gpa = value; } }
+
+        private decimal ascholarship;
+        public decimal AcademicalScholarship{ get { return ascholarship; } set { ascholarship = value; } }
 
 
     }

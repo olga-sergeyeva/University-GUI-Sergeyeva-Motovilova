@@ -80,6 +80,8 @@ namespace University
 
             var table = new TableLayoutPanel();
             table.RowStyles.Clear();
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
             table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
@@ -92,9 +94,9 @@ namespace University
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+
 
             table.Controls.Add(new Panel(), 0, 0);
             table.Controls.Add(label, 0, 1);
@@ -108,8 +110,8 @@ namespace University
             table.Controls.Add(boxFaculty, 1, 5);
             table.Controls.Add(labelGPA, 0, 6);
             table.Controls.Add(boxGPA, 1, 6);
-            table.Controls.Add(buttonAdd, 0, 7);
-            table.Controls.Add(new Panel(), 0, 4);
+            table.Controls.Add(buttonAdd, 1, 7);
+            table.Controls.Add(new Panel(), 0, 8);
 
 
             table.Dock = DockStyle.Fill;

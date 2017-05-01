@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace University
 {
-    class ChangeStudentInfoForm : Form
+    class DeleteStudentForm : Form
     {
-        public ChangeStudentInfoForm()
+        public DeleteStudentForm()
         {
             var label = new Label
             {
@@ -23,9 +23,9 @@ namespace University
                 Dock = DockStyle.Fill
             };
 
-            var buttonChange = new Button()
+            var buttonDelete = new Button()
             {
-                Text = "Редактировать",
+                Text = "Удалить",
                 Dock = DockStyle.Fill
             };
 
@@ -43,14 +43,14 @@ namespace University
             table.Controls.Add(new Panel(), 0, 0);
             table.Controls.Add(label, 0, 1);
             table.Controls.Add(combobox, 1, 1);
-            table.Controls.Add(buttonChange, 1, 2);
+            table.Controls.Add(buttonDelete, 1, 2);
             table.Controls.Add(new Panel(), 0, 3);
 
             table.Dock = DockStyle.Fill;
             Controls.Add(table);
 
             combobox.Click += (sender, args) => ListStudent(combobox);
-            //buttonChange.Click += (sender, args) => ChangeInfo(combobox.Text);
+            buttonDelete.Click += (sender, args) => DeleteStudent(combobox.SelectedText);
         }
 
         private void ListStudent(ComboBox combobox)
@@ -63,17 +63,21 @@ namespace University
             combobox.DataSource = List.ToList();
         }
 
-        private void ChangeInfo(string line)
+        private void DeleteStudent(string line)
         {
             string path = "C:\\Users\\user\\Desktop\\ListOfStudents.txt";
             List<string> List = new List<string>();
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
             {
-               
+                if (lines[i] != line)
+                    List.Add(lines[i]);
             }
-        }
 
+            foreach (string l in List)
+                File.WriteAllText(path, l + "\r\n");
+
+            MessageBox.Show("Студент удален из системы");
+        }
     }
 }
-

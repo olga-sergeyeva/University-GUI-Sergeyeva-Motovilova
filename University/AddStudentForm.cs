@@ -141,7 +141,7 @@ namespace University
             string path = "C:\\Users\\user\\Desktop\\ListOfStudents.txt";
             string info = id.ToString() + ' ' + fname + ' ' + lname + ' ' + faculty + ' ' + gpa + ' ' + ascholarship.ToString();           
             File.AppendAllText(path, info + "\r\n");
-            MessageBox.Show("Студент добавлен");
+            MessageBox.Show("Студент добавлен в систему");
         }
     }
 }

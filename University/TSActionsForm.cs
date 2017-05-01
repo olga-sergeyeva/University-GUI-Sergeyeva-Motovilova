@@ -88,6 +88,7 @@ namespace University
 
             buttonAddStudent.Click += (sender, args) => AddStudent();
             buttonChangeStudentInfo.Click += (sender, args) => ChangeStudentInfo();
+            buttonDeleteStudent.Click += (sender, args) => DeleteStudent();
         }
 
         private void AddStudent()
@@ -101,6 +102,13 @@ namespace University
         {
             ChangeStudentInfoForm csiform = new ChangeStudentInfoForm();
             csiform.Show();
+            this.Hide();
+        }
+
+        private void DeleteStudent()
+        {
+            DeleteStudentForm dsform = new DeleteStudentForm();
+            dsform.Show();
             this.Hide();
         }
     }

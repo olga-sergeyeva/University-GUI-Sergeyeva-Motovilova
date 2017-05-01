@@ -56,11 +56,11 @@ namespace University
             for (int i = 0; i < lines.Length; i++)
             {
                 lines[i] = string.Empty;
-                File.WriteAllText(path, lines[i] + "\r\n");
+                File.WriteAllText(path, lines[i]);
             }                
 
             foreach (string l in List)
-                File.WriteAllText(path, l + "\r\n");
+                File.AppendAllText(path, l + "\r\n");
 
             MessageBox.Show("Изменения сохранены");
         }

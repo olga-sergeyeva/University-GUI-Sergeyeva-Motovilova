@@ -50,12 +50,12 @@ namespace University
             table.Dock = DockStyle.Fill;
             Controls.Add(table);
 
-            buttonDelete.Click += (sender, args) => DeleteStudent(combobox.SelectedText);
+            buttonDelete.Click += (sender, args) => DeleteStudent(combobox);
         }
 
         private List<string> GetData()
         {
-            string path = "C:\\Users\\user\\Desktop\\ListOfStudents.txt";
+            string path = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
             List<string> List = new List<string>();
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
@@ -64,9 +64,10 @@ namespace University
             return List;
         }
 
-        private void DeleteStudent(string line)
+        private void DeleteStudent(ComboBox combobox)
         {
             string path = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
+            string line = combobox.SelectedText;
             List<string> List = new List<string>();
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)
@@ -75,8 +76,14 @@ namespace University
                     List.Add(lines[i]);
             }
 
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i] = string.Empty;
+                File.WriteAllText(path, lines[i]);
+            }
+
             foreach (string l in List)
-                File.WriteAllText(path, l + "\r\n");
+                File.AppendAllText(path, l + "\r\n");
 
             MessageBox.Show("Студент удален из системы");
         }

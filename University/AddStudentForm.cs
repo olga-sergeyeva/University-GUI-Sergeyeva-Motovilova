@@ -138,7 +138,7 @@ namespace University
 
         private void ClickAddStudent(int id, string fname, string lname, string faculty, string gpa, decimal ascholarship)
         {
-            string path = "C:\\Users\\user\\Desktop\\ListOfStudents.txt";
+            string path = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
             string info = id.ToString() + ' ' + fname + ' ' + lname + ' ' + faculty + ' ' + gpa + ' ' + ascholarship.ToString();           
             File.AppendAllText(path, info + "\r\n");
             MessageBox.Show("Студент добавлен в систему");

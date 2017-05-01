@@ -57,9 +57,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1 Иван Николаев ИИТ Отличная 2000",
-            "2 Дарья Краснова ФлиП Хорошая 1500"});
             this.comboBox1.Location = new System.Drawing.Point(242, 52);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(256, 21);
@@ -170,6 +167,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Сохранить изменения";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ChangeStudentInfoForm2
             // 

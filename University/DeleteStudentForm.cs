@@ -66,7 +66,7 @@ namespace University
 
         private void DeleteStudent(string line)
         {
-            string path = "C:\\Users\\user\\Desktop\\ListOfStudents.txt";
+            string path = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
             List<string> List = new List<string>();
             string[] lines = File.ReadAllLines(path);
             for (int i = 0; i < lines.Length; i++)

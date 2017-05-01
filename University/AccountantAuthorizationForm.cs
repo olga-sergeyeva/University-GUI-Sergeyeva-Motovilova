@@ -23,7 +23,11 @@ namespace University
             string password = "123";
 
             if (textBox1.Text == login && textBox2.Text == password)
-                MessageBox.Show("Авторизация прошла успешно");
+            {
+                AActionsForm aaform = new AActionsForm();
+                aaform.Show();
+                this.Hide();
+            }
             else MessageBox.Show("Неверный логин/пароль");
         }
     }

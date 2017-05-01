@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AActionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AccountantAuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +57,12 @@
     </Compile>
     <Compile Include="ActorChoiceForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddASholarshipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddASholarshipForm.Designer.cs">
+      <DependentUpon>AddASholarshipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddStudentForm.cs">
       <SubType>Form</SubType>
@@ -90,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="AccountantAuthorizationForm.resx">
       <DependentUpon>AccountantAuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddASholarshipForm.resx">
+      <DependentUpon>AddASholarshipForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeStudentInfoForm2.resx">
       <DependentUpon>ChangeStudentInfoForm2.cs</DependentUpon>

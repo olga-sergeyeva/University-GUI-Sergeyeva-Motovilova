@@ -40,6 +40,24 @@ namespace University
                 Dock = DockStyle.Fill
             };
 
+            var buttonAddEmployee = new Button
+            {
+                Text = "Добавить сотрудника",
+                Dock = DockStyle.Fill
+            };
+
+            var buttonChangeInfoEmployee = new Button
+            {
+                Text = "Редактировать профиль сотрудника",
+                Dock = DockStyle.Fill
+            };
+
+            var buttonDeleteEmployee = new Button
+            {
+                Text = "Удалить сотрудника",
+                Dock = DockStyle.Fill
+            };
+
             var table = new TableLayoutPanel();
             table.RowStyles.Clear();
             table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
@@ -47,7 +65,11 @@ namespace University
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
 
             table.Controls.Add(new Panel(), 0, 0);
@@ -55,6 +77,9 @@ namespace University
             table.Controls.Add(buttonAddStudent, 0, 2);
             table.Controls.Add(buttonChangeStudentInfo, 0, 3);
             table.Controls.Add(buttonDeleteStudent, 0, 4);
+            table.Controls.Add(buttonAddEmployee, 1, 2);
+            table.Controls.Add(buttonChangeInfoEmployee, 1, 3);
+            table.Controls.Add(buttonDeleteEmployee, 1, 4);
             table.Controls.Add(new Panel(), 0, 5);
 
 

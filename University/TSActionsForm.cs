@@ -100,7 +100,7 @@ namespace University
 
         private void ChangeStudentInfo()
         {
-            ChangeStudentInfoForm csiform = new ChangeStudentInfoForm();
+            ChangeStudentInfoForm2 csiform = new ChangeStudentInfoForm2();
             csiform.Show();
             this.Hide();
         }

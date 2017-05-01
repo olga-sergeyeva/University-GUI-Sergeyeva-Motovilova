@@ -61,6 +61,12 @@
     <Compile Include="ChangeStudentInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChangeStudentInfoForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeStudentInfoForm2.Designer.cs">
+      <DependentUpon>ChangeStudentInfoForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="AccountantAuthorizationForm.resx">
       <DependentUpon>AccountantAuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeStudentInfoForm2.resx">
+      <DependentUpon>ChangeStudentInfoForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

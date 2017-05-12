@@ -16,43 +16,44 @@ namespace University
         public AddASholarshipForm()
         {
             InitializeComponent();
-            comboBox1.DataSource = GetData().ToList();
+            comboBox1.DataSource = FileReader.ReadStudents().ToList();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sline = comboBox1.Text;
             string gpa;
-            string[] parsedLine = new string[6];
-            parsedLine = sline.Split(' ');
+            string[] parsedLine = new string[8];
+            parsedLine = sline.Split('\t');
 
-            gpa = parsedLine[4];
+            gpa = parsedLine[6];
 
-            if (gpa == "Отлично")
+            if (gpa == "Отличная")
                 textBox1.Text = "2000";
 
-            if (gpa == "Хорошо")
+            if (gpa == "Хорошая")
                 textBox1.Text = "1500";
 
-            if (gpa == "Удовлетворительно" || gpa == "Неудовлетворительно")
+            if (gpa == "Удовлетворительная" || gpa == "Неудовлетворительная")
                 textBox1.Text = "0";
 
-        }
-
-        private List<string> GetData()
-        {
-            string path = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
-            List<string> List = new List<string>();
-            string[] lines = File.ReadAllLines(path);
-            for (int i = 0; i < lines.Length; i++)
-                List.Add(lines[i]);
-
-            return List;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Стипендия назначена");
+        }
+
+        private void GetBack()
+        {
+            TSActionsForm tsaform = new TSActionsForm();
+            tsaform.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GetBack();
         }
     }
 }

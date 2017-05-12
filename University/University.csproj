@@ -80,6 +80,12 @@
     <Compile Include="ChangeStudentInfoForm.Designer.cs">
       <DependentUpon>ChangeStudentInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CountSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountSalaryForm.Designer.cs">
+      <DependentUpon>CountSalaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeStudentInfoForm.resx">
       <DependentUpon>ChangeStudentInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountSalaryForm.resx">
+      <DependentUpon>CountSalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteStudentForm.resx">
       <DependentUpon>DeleteStudentForm.cs</DependentUpon>

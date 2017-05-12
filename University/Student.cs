@@ -9,7 +9,7 @@ namespace University
 {
     class Student
     {
-        public Student(int id_student, string fname, string lname, string sname, string faculty, string department, string gpa, decimal ascholarship, decimal sscholarship)
+        public Student(int id_student, string fname, string lname, string sname, string faculty, string department, string gpa, string privilege, AcademicalScholarship ascholarship, SocialScholarship sscholarship)
         {
             IdStudent = id_student;
             FirstName = fname;
@@ -18,6 +18,7 @@ namespace University
             Faculty = faculty;
             Department = department;
             GPA = gpa;
+            Privilege = privilege;
             AcademicalScholarship = ascholarship;
             SocialScholarship = sscholarship;
         }
@@ -43,11 +44,14 @@ namespace University
         private string gpa;
         public string GPA { get { return gpa; } set { gpa = value; } }
 
-        private decimal ascholarship;
-        public decimal AcademicalScholarship{ get { return ascholarship; } set { ascholarship = value; } }
+        private string privilege;
+        public string Privilege { get { return gpa; } set { gpa = value; } }
 
-        private decimal sscholarship;
-        public decimal SocialScholarship { get { return sscholarship; } set { sscholarship = value; } }
+        private AcademicalScholarship ascholarship;
+        public AcademicalScholarship AcademicalScholarship { get { return ascholarship; } set { ascholarship = value; } }
+
+        private SocialScholarship sscholarship;
+        public SocialScholarship SocialScholarship { get { return sscholarship; } set { sscholarship = value; } }
 
         public void AddStudent(Student student)
         {

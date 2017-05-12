@@ -39,7 +39,7 @@ namespace University
         {
             string sline = comboBox1.Text;
             string newInfo = textBox1.Text + '\t' + textBox2.Text + '\t' + textBox3.Text + '\t' + textBox8.Text + '\t' + textBox4.Text + '\t' + textBox7.Text + '\t' + textBox5.Text + '\t' + textBox6.Text;
-            FileReader.RewriteStudents(sline, newInfo);
+            FileReader.ChangeStudent(sline, newInfo);
             MessageBox.Show("Изменения сохранены");
         }
 

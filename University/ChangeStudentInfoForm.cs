@@ -42,5 +42,17 @@ namespace University
             FileReader.RewriteStudents(sline, newInfo);
             MessageBox.Show("Изменения сохранены");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetBack();
+        }
+
+        private void GetBack()
+        {
+            TSActionsForm tsaform = new TSActionsForm();
+            tsaform.Show();
+            this.Hide();
+        }
     }
 }

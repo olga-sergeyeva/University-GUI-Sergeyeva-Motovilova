@@ -55,7 +55,7 @@ namespace University
 
         static public void AddStudentToDB(Student student)
         {
-            string info = student.IdStudent.ToString() + '\t' + student.FirstName + '\t' + student.LastName + '\t' + student.SecondName + '\t' + student.Faculty + '\t' + student.Department + '\t' + student.GPA + '\t' + student.Privilege + '\t' + student.AcademicalScholarship.AcademicalScholarshipSize.ToString() + '\t' + student.SocialScholarship.SocialScholarshipSize.ToString();
+            string info = student.IdStudent.ToString() + '\t' + student.LastName + '\t' + student.FirstName + '\t' + student.SecondName + '\t' + student.Faculty + '\t' + student.Department + '\t' + student.GPA + '\t' + student.Privilege;
             File.AppendAllText(spath, info + "\r\n");
         }
     }

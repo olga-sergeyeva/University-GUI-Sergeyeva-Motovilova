@@ -38,7 +38,7 @@ namespace University
         private void button2_Click(object sender, EventArgs e)
         {
             string sline = comboBox1.Text;
-            string newInfo = textBox1.Text + ' ' + textBox2.Text + ' ' + textBox3.Text + ' ' + textBox8.Text + ' ' + textBox4.Text + ' ' + textBox7.Text + textBox5.Text + textBox6.Text;
+            string newInfo = textBox1.Text + '\t' + textBox2.Text + '\t' + textBox3.Text + '\t' + textBox8.Text + '\t' + textBox4.Text + '\t' + textBox7.Text + '\t' + textBox5.Text + '\t' + textBox6.Text;
             FileReader.RewriteStudents(sline, newInfo);
             MessageBox.Show("Изменения сохранены");
         }

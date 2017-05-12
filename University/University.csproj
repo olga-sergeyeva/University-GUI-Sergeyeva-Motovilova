@@ -79,6 +79,8 @@
     <Compile Include="DeleteStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Employee.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

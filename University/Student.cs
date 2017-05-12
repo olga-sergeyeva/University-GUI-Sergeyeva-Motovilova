@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +9,17 @@ namespace University
 {
     class Student
     {
-        public Student(int id_student, string fname, string lname, string faculty, string gpa, decimal ascholarship)
+        public Student(int id_student, string fname, string lname, string sname, string faculty, string department, string gpa, decimal ascholarship, decimal sscholarship)
         {
-            this.id_student = id_student;
-            this.fname = fname;
-            this.lname = lname;
-            this.faculty = faculty;
-            this.gpa = gpa;
-            this.ascholarship = ascholarship;
+            IdStudent = id_student;
+            FirstName = fname;
+            LastName = lname;
+            SecondName = sname;
+            Faculty = faculty;
+            Department = department;
+            GPA = gpa;
+            AcademicalScholarship = ascholarship;
+            SocialScholarship = sscholarship;
         }
 
         private int id_student;
@@ -27,8 +31,14 @@ namespace University
         private string lname;
         public string LastName { get { return lname; } set { lname = value; } }
 
+        private string sname;
+        public string SecondName { get { return sname; } set { sname = value; } }
+
         private string faculty;
         public string Faculty { get { return faculty; } set { faculty = value; } }
+
+        private string department;
+        public string Department { get { return faculty; } set { faculty = value; } }
 
         private string gpa;
         public string GPA { get { return gpa; } set { gpa = value; } }
@@ -36,6 +46,13 @@ namespace University
         private decimal ascholarship;
         public decimal AcademicalScholarship{ get { return ascholarship; } set { ascholarship = value; } }
 
+        private decimal sscholarship;
+        public decimal SocialScholarship { get { return sscholarship; } set { sscholarship = value; } }
 
+        public void AddStudent(Student student)
+        {
+            FileReader.Students.Add(student);
+            FileReader.AddStudentToDB(student);
+        }
     }
 }

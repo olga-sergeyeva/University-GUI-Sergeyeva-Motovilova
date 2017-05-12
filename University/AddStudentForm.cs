@@ -51,6 +51,17 @@ namespace University
                 Dock = DockStyle.Fill,
             };
 
+            var labelSecondName = new Label
+            {
+                Text = "Отчество",
+                Dock = DockStyle.Fill
+            };
+
+            var boxSecondName = new TextBox
+            {
+                Dock = DockStyle.Fill,
+            };
+
             var labelFaculty = new Label
             {
                 Text = "Факультет",
@@ -58,6 +69,17 @@ namespace University
             };
 
             var boxFaculty= new TextBox
+            {
+                Dock = DockStyle.Fill,
+            };
+
+            var labelDepartment = new Label
+            {
+                Text = "Кафедра",
+                Dock = DockStyle.Fill
+            };
+
+            var boxDepartment = new TextBox
             {
                 Dock = DockStyle.Fill,
             };
@@ -80,6 +102,17 @@ namespace University
             };
 
             var boxAsholarship = new TextBox
+            {
+                Dock = DockStyle.Fill,
+            };
+
+            var labelSscholarship = new Label
+            {
+                Text = "Размер социальной стипендии",
+                Dock = DockStyle.Fill
+            };
+
+            var boxSsholarship = new TextBox
             {
                 Dock = DockStyle.Fill,
             };
@@ -109,6 +142,12 @@ namespace University
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
             table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
 
 
@@ -120,27 +159,32 @@ namespace University
             table.Controls.Add(boxFirstName, 1, 3);
             table.Controls.Add(labelLastName, 0, 4);
             table.Controls.Add(boxLastName, 1, 4);
-            table.Controls.Add(labelFaculty, 0, 5);
-            table.Controls.Add(boxFaculty, 1, 5);
-            table.Controls.Add(labelGPA, 0, 6);
-            table.Controls.Add(boxGPA, 1, 6);
-            table.Controls.Add(labelAscholarship, 0, 7);
-            table.Controls.Add(boxAsholarship, 1, 7);
-            table.Controls.Add(buttonAdd, 1, 8);
-            table.Controls.Add(new Panel(), 0, 9);
+            table.Controls.Add(labelSecondName, 0, 5);
+            table.Controls.Add(boxSecondName, 1, 5);
+            table.Controls.Add(labelFaculty, 0, 6);
+            table.Controls.Add(boxFaculty, 1, 6);
+            table.Controls.Add(labelDepartment, 0, 7);
+            table.Controls.Add(boxDepartment, 1, 7);
+            table.Controls.Add(labelGPA, 0, 8);
+            table.Controls.Add(boxGPA, 1, 8);
+            table.Controls.Add(labelAscholarship, 0, 9);
+            table.Controls.Add(boxAsholarship, 1, 9);
+            table.Controls.Add(labelSscholarship, 0, 10);
+            table.Controls.Add(boxSsholarship, 1, 10);
+            table.Controls.Add(buttonAdd, 1, 11);
+            table.Controls.Add(new Panel(), 0, 12);
 
 
             table.Dock = DockStyle.Fill;
             Controls.Add(table);
 
-            buttonAdd.Click += (sender, args) => ClickAddStudent(int.Parse(boxID.Text), boxFirstName.Text, boxLastName.Text, boxFaculty.Text, boxGPA.Text, decimal.Parse(boxAsholarship.Text));
+            buttonAdd.Click += (sender, args) => ClickAddStudent(int.Parse(boxID.Text), boxFirstName.Text, boxLastName.Text, boxSecondName.Text, boxFaculty.Text, boxDepartment.Text, boxGPA.Text, decimal.Parse(boxAsholarship.Text), decimal.Parse(boxSsholarship.Text));
         }
 
-        private void ClickAddStudent(int id, string fname, string lname, string faculty, string gpa, decimal ascholarship)
+        private void ClickAddStudent(int id, string fname, string lname, string sname, string faculty, string department, string gpa, decimal ascholarship, decimal sscholarship)
         {
-            string path = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
-            string info = id.ToString() + ' ' + fname + ' ' + lname + ' ' + faculty + ' ' + gpa + ' ' + ascholarship.ToString();           
-            File.AppendAllText(path, info + "\r\n");
+            Student student = new Student(id, fname, lname, sname, faculty, department, gpa, ascholarship, sscholarship);
+            student.AddStudent(student);
             MessageBox.Show("Студент добавлен в систему");
         }
     }

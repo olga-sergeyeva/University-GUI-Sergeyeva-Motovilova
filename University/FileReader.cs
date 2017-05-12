@@ -12,6 +12,7 @@ namespace University
         static public List<Student> Students = new List<Student>();
         static public List<Employee> Employees = new List<Employee>();
         static private string spath = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Students.txt";
+        static private string epath = "C:\\Users\\user\\documents\\visual studio 2015\\Projects\\University\\University\\Employees.txt";
 
         static public List<string> ReadStudents()
         {
@@ -27,6 +28,12 @@ namespace University
         {
             string info = student.IdStudent.ToString() + '\t' + student.LastName + '\t' + student.FirstName + '\t' + student.SecondName + '\t' + student.Faculty + '\t' + student.Department + '\t' + student.GPA + '\t' + student.Privilege;
             File.AppendAllText(spath, info + "\r\n");
+        }
+
+        static public void AddEmployeeToDB(Employee employee)
+        {
+            string info = employee.IdEmployee.ToString() + '\t' + employee.LastName + '\t' + employee.FirstName + '\t' + employee.SecondName + '\t' + employee.Sal.SalarySize.ToString() + '\t' + employee.Prem.PremiumPercent.ToString();
+            File.AppendAllText(epath, info + "\r\n");
         }
 
         static public void ChangeStudent(string sline, string newInfo)
@@ -75,10 +82,15 @@ namespace University
                 File.AppendAllText(spath, l + "\r\n");
         }
 
-        //static public List<Employee> ReadEmployees()
-        //{
+        static public List<string> ReadEmployees()
+        {
+            List<string> List = new List<string>();
+            string[] lines = File.ReadAllLines(epath);
+            for (int i = 0; i < lines.Length; i++)
+                List.Add(lines[i]);
 
-        //}
+            return List;
+        }
 
 
     }

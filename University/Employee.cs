@@ -8,13 +8,14 @@ namespace University
 {
     class Employee
     {
-        public Employee(int id_employee, string fname, string lname, string sname, decimal salary)
+        public Employee(int id_employee, string lname, string fname, string sname, Salary salary, Premium premium)
         {
             IdEmployee = id_employee;
             FirstName = fname;
             LastName = lname;
             SecondName = sname;
-            Salary = salary;
+            Sal = salary;
+            Prem = premium;
         }
 
         private int id_employee;
@@ -29,7 +30,16 @@ namespace University
         private string sname;
         public string SecondName { get { return sname; } set { sname = value; } }
 
-        private decimal salary;
-        public decimal Salary { get { return salary; } set { salary = value; } }
+        private Salary salary;
+        public Salary Sal { get { return salary; } set { salary = value; } }
+
+        private Premium premium;
+        public Premium Prem { get { return premium; } set { premium = value; } }
+
+        public void AddEmployee(Employee employee)
+        {
+            FileReader.Employees.Add(employee);
+            FileReader.AddEmployeeToDB(employee);
+        }
     }
 }
